@@ -8,23 +8,28 @@ public class NextLevel : MonoBehaviour
 
     //private int nextSceneToLoad;
     public string LevelName;
-    public GameMaster gm;
-    private static NextLevel instance;
+    private GameMaster gm;
+    //private static NextLevel instance;
 
-
-
-    void Awake()
+    private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    } 
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+    }
+
+
+    /*  void Awake()
+      {
+          if (instance == null)
+          {
+              instance = this;
+              DontDestroyOnLoad(instance);
+          }
+          else
+          {
+              Destroy(gameObject);
+          }
+      }
+      */
 
     private void OnTriggerEnter(Collider collision)
     {

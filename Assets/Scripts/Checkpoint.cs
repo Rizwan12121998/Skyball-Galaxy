@@ -14,8 +14,9 @@ public class Checkpoint : MonoBehaviour
 
    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
+            Debug.Log("Position saved");
             gm.lastCheckPointPos = transform.position;
         }
     }
