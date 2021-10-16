@@ -8,29 +8,21 @@ public class GameMaster : MonoBehaviour
     public Vector3 lastCheckPointPos;
     private int nextSceneToLoad;
 
-      void Awake()
-       {
-           if(instance == null)
-           {
-               instance = this;
-               DontDestroyOnLoad(instance);
-           } else
-           {
-               Destroy(gameObject);
-           }
-       }  
-  /* void Awake()
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
+            
         }
 
         else
         {
-            instance.lastCheckPointPos = this.lastCheckPointPos;
+            //Debug.Log("Insatance not null");
+            //this.lastCheckPointPos = instance.lastCheckPointPos;
             Destroy(gameObject);
         }
-    }  */
+    }
 }
+
