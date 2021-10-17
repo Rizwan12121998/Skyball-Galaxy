@@ -464,7 +464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelName: Level_02
-  gm: {fileID: 138793785}
 --- !u!65 &348407963
 BoxCollider:
   m_ObjectHideFlags: 0
