@@ -11,7 +11,6 @@ public class BallMotor : MonoBehaviour
     public float terminalRotationSpeed = 25.0f;
     public Vector3 MoveVector { set; get; }
     public Joystick joystick;
-    public AudioSource tickSource;
 
     private Rigidbody thisRigidbody;
 
@@ -21,7 +20,6 @@ public class BallMotor : MonoBehaviour
         thisRigidbody = gameObject.AddComponent<Rigidbody>();
         thisRigidbody.maxAngularVelocity = terminalRotationSpeed;
         thisRigidbody.drag = drag;
-        tickSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,13 +35,6 @@ public class BallMotor : MonoBehaviour
         thisRigidbody.AddForce((MoveVector * moveSpeed));
     }
 
-    void OnCollisionEnter (Collision collision)
-    {
-        if (collision.gameObject.tag == "Target")
-        {
-            tickSource.Play();
-        }
-    }
 
     private Vector3 PoolInput()
     {

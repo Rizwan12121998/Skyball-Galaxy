@@ -18,6 +18,7 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.Log("Position saved");
             gm.lastCheckPointPos = transform.position;
+            Destroy(gameObject);
         }
     }
 }
