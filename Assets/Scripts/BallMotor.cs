@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EasyJoystick;
+using UnityEngine.SceneManagement;
 
 public class BallMotor : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BallMotor : MonoBehaviour
         thisRigidbody = gameObject.AddComponent<Rigidbody>();
         thisRigidbody.maxAngularVelocity = terminalRotationSpeed;
         thisRigidbody.drag = drag;
+
+
     }
 
     // Update is called once per frame
@@ -49,4 +52,6 @@ public class BallMotor : MonoBehaviour
         return dir;
 
     }
+
+
 }

@@ -31,9 +31,18 @@ public class NextLevel : MonoBehaviour
       }
       */
 
-    private void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
         gm.lastCheckPointPos = GameObject.FindGameObjectWithTag("StartPoint").transform.position; 
         SceneManager.LoadScene(LevelName);
+
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= PlayerPrefs.GetInt("levelIsUnlocked"))
+        {
+            PlayerPrefs.SetInt("levelIsUnlocked", currentLevel + 1);
+        }
+
+        Debug.Log("LEVEL" + PlayerPrefs.GetInt("levelIsUnlocked") + " UNLOCKED");
     }
 }
