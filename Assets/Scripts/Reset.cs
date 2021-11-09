@@ -30,10 +30,18 @@ public class Reset : MonoBehaviour
 public class Reset : MonoBehaviour
 {
 
+    public GameObject deathExplosion;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
             print("Entering the " + other.gameObject.name);
+
+        if (other.gameObject.tag == "Deadfx")
+        {
+            Instantiate(deathExplosion, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 
 

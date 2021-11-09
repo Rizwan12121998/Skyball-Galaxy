@@ -8,6 +8,7 @@ TagManager:
   - StartPoint
   - Target
   - Exit
+  - Deadfx
   layers:
   - Default
   - TransparentFX

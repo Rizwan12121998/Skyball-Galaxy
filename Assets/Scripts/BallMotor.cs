@@ -11,7 +11,9 @@ public class BallMotor : MonoBehaviour
     public float drag = 0.5f;
     public float terminalRotationSpeed = 25.0f;
     public Vector3 MoveVector { set; get; }
-    public Joystick joystick;
+    private Joystick joystick;
+    public Joystick joystick1;
+    public Joystick joystick2;
 
     //for jumping
     public float jumpSpeed = 3f;
@@ -21,6 +23,7 @@ public class BallMotor : MonoBehaviour
     private float countDown;
 
     private Rigidbody thisRigidbody;
+    private int switchjoystick;
 
     // Start is called before the first frame update
     private void Start()
@@ -32,9 +35,23 @@ public class BallMotor : MonoBehaviour
         canjump = true;
         countDown = jumpDelay;
 
+        joystick = joystick1;
 
+        switchjoystick = -1;
     }
 
+    public void Switchjoystick()
+    {
+        switchjoystick = switchjoystick * -1;
+        if (switchjoystick > 0)
+        {
+            joystick = joystick2;
+        }
+        else
+        {
+            joystick = joystick1;
+        }
+    }
 
     // Update is called once per frame
     private void Update()
